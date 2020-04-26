@@ -10,14 +10,17 @@ let url_submit = document.getElementById("url_submit");
 let url_result = document.getElementById("url-result");
 url_submit.addEventListener('click',showWindowHref);
 function showWindowHref(){
-    let url = url.value.split("?")[1];
-    let urls = url.split("&");
-    let pairname="name";
-    for (var i = 0; i < urls.length; i++)
-         {
-            var pair = urls[i].split("=");
-            if (pair[0]===pairname) {  url_result.value=pair[1]; }
+    let url1=url.value.split("?")[1];
+    let urls=url1.split("&");
+    let pairname='name';
+    for (let i = 0; i < urls.length; i++) {
+            let pair = urls[i].split("=");
+            if (pair[0]===pairname) {
+                url_result.value=pair[1];
+                return;
+            }
          }
+    url_result.value="don't find name";
 }
 //2. 每隔五秒运行一次函数直到某一整分钟停止，比如从20:55:45运行到20:56:00停止；或者运行10次，先到的为准。从1开始每过五秒，输入框内数值翻倍。初始值为1。
 //注意：你可以在函数 timeTest内部 和 timeTest外部 写代码使得该功能实现。
