@@ -26,7 +26,7 @@ function showWindowHref(){
 //提示：mul为html中id为"mul"的元素对象，可直接通过mul.value获得其内的输入值。
 let mul = document.getElementById("mul");
 window.onload=function timeTest() {
-    var count = 1;
+    var count = 0;
     mul.value = 1;
     var minutes=new Date().getMinutes();
     interval = setInterval(function () {
